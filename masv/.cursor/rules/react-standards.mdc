@@ -1,0 +1,35 @@
+---
+description: Padrões React para o projeto Optaconsult
+globs: **/*.tsx
+alwaysApply: false
+---
+
+# Padrões React
+
+## Componentes
+- Usar componentes funcionais
+- Extrair lógica reutilizável para custom hooks
+- Manter componentes focados e com responsabilidade única
+
+## Estrutura
+- Componentes em `src/components/` organizados por pasta (layout, ui, sections)
+- Hooks em `src/hooks/`
+- Estilos em `src/styles/`
+
+## Acessibilidade
+- Usar `aria-label` em botões icónicos e elementos interativos
+- Garantir `focus-visible` visível em todos os elementos focáveis
+- Usar `role` e `aria-labelledby` em secções quando apropriado
+
+## Exemplo
+```tsx
+// Componente funcional com props tipadas
+interface ButtonProps {
+  variant?: 'primary' | 'outline';
+  children: React.ReactNode;
+}
+
+export function Button({ variant = 'primary', children }: ButtonProps) {
+  return <button className={variants[variant]}>{children}</button>;
+}
+```
